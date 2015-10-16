@@ -1,0 +1,15 @@
+To install:
+
+$ cd ~/Downloads
+$ wget https://hydra.nixos.org/build/25489757/download/1/nix_1.10-1_amd64.deb
+$ sudo dpkg -i nix_1.10-1_amd64.deb
+
+Before trying to compile mitro:
+$ source /etc/profile.d/nix.sh
+$ nix-channel --update
+
+See https://github.com/anemirovsky/passopolis-server for build commands.
+
+* https://www.hashtagsecurity.com/mitro-login-manager-on-premise-2/ for how to run it on the server for reals.
+* https://github.com/mitro-co/mitro/issues/123#issuecomment-128889912
+* https://github.com/mitro-co/mitro/blob/master/mitro-core/production/ansible/README.md
