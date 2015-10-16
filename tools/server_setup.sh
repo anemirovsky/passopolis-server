@@ -11,6 +11,8 @@ git clone https://github.com/WeAreWizards/passopolis-server.git /var/lib/mitro
 mkdir -p mitrocore_secrets/sign_keyczar
 java -cp build/mitrocore.jar org.keyczar.KeyczarTool create --location=/var/lib/mitro/mitrocore_secrets/sign_keyczar --purpose=sign
 java -cp build/mitrocore.jar org.keyczar.KeyczarTool addkey --location=/var/lib/mitro/mitrocore_secrets/sign_keyczar --status=primary
+mkdir /var/log/mitro
+chown mitro:mitro /var/log/mitro
 chown mitro:mitro /var/lib/mitro
 sudo -u postgres bash << EOF
 psql -c "CREATE USER $DBUSER WITH PASSWORD $DBPASS;"
