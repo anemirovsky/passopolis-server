@@ -32,16 +32,18 @@ import com.j256.ormlite.jdbc.JdbcConnectionSource;
  */
 public class CreateTables {
   public static void main(String[] args) throws Exception {
-    if (args.length != 1) {
-      System.err.println("CreateTables (database name)");
+    if (args.length != 3) {
+      System.err.println("CreateTables (database name) (username) (password)");
       System.exit(1);
     }
     String databaseName = args[0];
+    String username = args[1];
+    String password = args[2];
 
     int exitCode = 0;
 
     String databaseUrl = ManagerFactory.DATABASE_URL.replace("/mitro", "/" + databaseName);
-    JdbcConnectionSource connection = new JdbcConnectionSource(databaseUrl);
+    JdbcConnectionSource connection = new JdbcConnectionSource(databaseUrl, username, password);
     try {
       Manager.createTablesIfNotExists(connection);
     } catch (SQLException e) {

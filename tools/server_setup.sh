@@ -19,4 +19,5 @@ psql -c "CREATE USER $DBUSER WITH PASSWORD $DBPASS;"
 psql -c "CREATE DATABASE $DB;"
 psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB TO $DBUSER;"
 EOF
-java -cp -Ddatabase_url="jdbc:postgresql://localhost:5432/mitro?user=mitro&password=mitro" build/mitrocore.jar co.mitro.core.server.CreateTables mitro
+java -cp build/mitrocore.jar co.mitro.core.server.CreateTables mitro mitro password
+
