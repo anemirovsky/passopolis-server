@@ -2,7 +2,10 @@ Steps to setup passopolis/mitro on Ubuntu 14.04:
 
 1. Edit server_setup.sh to replace db values with yours.
 2. sudo ./server_setup.sh
-3. Edit mitro.conf to replace db values with yours.
-4. sudo cp mitro.conf to /etc/init/mitro.conf
-5. sudo ln -s /etc/init/mitro.conf /etc/init.d/mitro
-6. Edit server host for each extension at chrome-extension://gknclpdgpfkfckamhononecbipkbmpil/html/preferences.html.
+3. See https://wiki.eclipse.org/Jetty/Tutorial/Apache for configuring
+mod_proxy/mod_proxy_http. Apache is handling SSL and we're forwarding along
+to localhost:8080 which Jetty is listening to.
+4. Edit mitro.conf to replace db values with yours.
+5. sudo cp mitro.conf to /etc/init/mitro.conf
+6. sudo ln -s /etc/init/mitro.conf /etc/init.d/mitro
+7. Edit server host for each extension at chrome-extension://gknclpdgpfkfckamhononecbipkbmpil/html/preferences.html.
